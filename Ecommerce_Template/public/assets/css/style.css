@@ -1,0 +1,141 @@
+:root {
+    --primary-color: #123458;
+    --secondary-color: #030303;
+    --tertiary-color: #D4C9BE;
+    --quaternary-color: #F1EFEC;
+
+    --additional-one: #292929;
+}
+
+/* ================================= HEADER ================================= */
+header {
+    height: 90px;
+    width: 100%;
+    background: var(--quaternary-color);
+    padding: 0px 70px;
+
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+
+    position: fixed;
+    z-index: 1000;
+
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* 1. LOGO CONTAINER _____________ */
+    .logo-container {
+        color: var(--secondary-color);
+        font-size: 22px;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        p {
+            font-size: 19px;
+            font-weight: 600;
+            letter-spacing: 0.6px;
+        }
+    }
+
+    /* 2. NAVIGATIONS _____________ */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 60px;
+
+        ul {
+            list-style: none;
+
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            li {
+                font-size: 15px;
+                cursor: pointer;
+
+                transition: color 0.3s ease;
+            }
+
+            
+        }
+    }
+}
+
+/* HEADER | TRANSITIONS OR ANIMATIONS */
+header :where(nav) :where(ul) :where(li:hover) {
+    color: var(--primary-color);
+}
+
+
+
+
+main {
+    .first-section {
+        position: relative;
+        z-index: 1;
+
+        img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            object-position: center;
+            filter: brightness(0.6);
+        }
+
+        .headline {
+            width: 350px;
+
+            position: absolute;
+            top: 55%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+
+            h2 {
+                color: var(--quaternary-color);
+                font-size: 30px;
+                letter-spacing: 1px;
+                text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+            }
+
+            .buttons {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+
+                a {
+                    background: var(--additional-one);
+                    text-decoration: none;
+                    color: var(--tertiary-color);
+                    padding: 10px 20px;
+                    font-size: 13px;
+
+                    border: 1px solid black;
+                    border-radius: 10px;
+
+                    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+main .first-section .headline .buttons a:hover {
+    background: var(--tertiary-color);
+    color: var(--secondary-color);
+}
